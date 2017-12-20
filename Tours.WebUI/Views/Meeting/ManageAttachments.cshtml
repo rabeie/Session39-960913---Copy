@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SessionModel.Attachment>
+@{
+    ViewBag.Title = "ManageAttachments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>لیست پیوست ها</h2>
+<h3>@ViewBag.MeetingTitle</h3>
+
+<table class="table table-hover table-bordered table-stripped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginalFileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MimeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileSize)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OriginalFileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MimeType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileSize) KB
+            </td>
+            <td>
+                <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger btn-xs">
+                    <span class="glyphicon glyphicon-remove" title="حذف"></span>
+                </a>
+                <a href="@Url.Action("DownloadAttachment", new { id = item.Id })"
+                   class="btn btn-primary btn-xs">
+                    <span class="glyphicon glyphicon-save-file"></span>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    <a href="@Url.Action("CreateAttachment", new { MeetingId = ViewBag.MeetingId })" class="btn btn-success btn-sm pull-left">پیوست جدید</a>
+</p>
+

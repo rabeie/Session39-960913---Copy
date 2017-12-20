@@ -1,0 +1,61 @@
+﻿@model SessionModel.User
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<form method="post" class="form-horizontal">
+     
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Name">نام</label>
+        <div class="col-md-10">
+            <input type="text" name="Name" id="Name"  value="@Model.Name" placeholder="نام" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Family">نام خانوادگی</label>
+        <div class="col-md-10">
+            <input type="text" name="Family" id="Family"  value="@Model.Family" placeholder="نام خانوادگی" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Post">سمت</label>
+        <div class="col-md-10">
+            <input type="text" name="Post" id="Post"  value="@Model.Post" placeholder="سمت" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="NationalCode">کد ملی</label>
+        <div class="col-md-10">
+            <input type="text" name="NationalCode" id="NationalCode"   value="@Model.NationalCode" placeholder="کد ملی" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Username">نام کاربری</label>
+        <div class="col-md-10">
+            <input type="text" name="Username" id="Username" placeholder="نام کاربری"   value="@Model.Username" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Password">کلمه عبور</label>
+        <div class="col-md-10">
+            <input type="password" name="Password" id="Password" placeholder="کلمه عبور" class="form-control" />
+        </div>
+    </div>
+    <input type="hidden" name="id" id="id" value="@Model.Id" />
+    <div class="form-group">
+        <button class="btn btn-success btn-sm pull-left" type="submit">
+            <span class="glyphicon glyphicon-save"></span>
+            ذخیره
+        </button>
+    </div>
+</form>
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

@@ -1,0 +1,271 @@
+﻿
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>مدیریت جلسات | @ViewBag.Title</title>
+    <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme-rtl.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">مدیریت جلسات</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="@Url.Action("Index", "Home")">خانه</a></li>
+                <li><a href="@Url.Action("Index", "Meeting")">مدیریت جلسات</a></li>
+                <li><a href="@Url.Action("Index", "Passengers")">مدیریت مسافران</a></li>
+                <li><a href="@Url.Action("Index", "TourPackages")">مدیریت تورها</a></li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="main-container" class="container">
+        @if (TempData["Message"] != null)
+        {
+            <div id="message" class="alert alert-info">
+                @TempData["Message"]
+            </div>
+        }
+        <div class="row">
+            <div class="col-md-12">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/bootstrap-rtl.js"></script>
+    <script src="~/Scripts/scripts.js"></script>
+</body>
+</html>*@
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>مدیریت جلسات | @ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    Power Template
+    http://www.templatemo.com/tm-508-power
+    -->
+    <!--
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+            -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+  <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap-theme-rtl.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <link rel="stylesheet" href="~/Content/templatemo_misc.css">
+    <link rel="stylesheet" href="~/Content/templatemo_style.css">
+    <link rel="stylesheet" href="~/Content/owl-carousel.css">
+
+    <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+
+    <div class="site-main" id="sTop">
+        <div class="site-header">
+            <div class="main-header">
+                <div class="container">
+
+                    <div class="row">
+                        <nav class="navbar navbar-inverse" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="#top" class="navbar-brand" id="font-navbar-brand">سیستم جامع ثبت جلسات</a>
+
+                                <div class="collapse navbar-collapse" id="myNavbar">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="@Url.Action("Index", "Home")">خانه</a></li>
+                                        <li><a href="@Url.Action("Index", "Meeting")">مدیریت جلسات</a></li>
+                                        <li><a href="@Url.Action("Index", "Users")">مدیریت کاربران</a></li>
+                                        <li><a href="@Url.Action("Index", "TourPackages")">مدیریت تورها</a></li>
+                                        <li class="dropdown test">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span> مدیریت جلسات</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="@Url.Action("Create", "Guest")">تعریف مهمانان</a></li>
+                                                <li><a href="@Url.Action("Index", "Meeting")">تعریف جلسات</a></li>
+                                                <li><a href="#">Home</a></li>
+                                                <li><a href="#">Home</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div id="main-nav" class="collapse  navbar-collapse">
+                                 <ul class="menu-first nav  navbar-nav" style="margin-right: 20px;">
+                                     <li class="active"><a href="#">صفحه اصلی</a>
+                                                                                   </li>
+                                     <li><a href="#about">گزارشات</a></li>
+
+                                     <li><a href="#blog">ارگان</a></li>
+                                     <li ><a href="http://templatemo.com" class="external" target=			                                                  "_parent" rel="nofollow">مدیریت جلسات</a>
+
+
+
+
+                                     </li>
+                                    <li><a href="#contact-us">مدیریت کاربران</a></li>
+
+
+
+                                 </ul>
+                             </div> <!-- /.main-menu -->
+
+                        </nav>
+                    </div> <!-- /.row -->
+                </div> <!-- /#menu-wrapper -->
+            </div> <!-- /.container -->
+        </div> <!-- /.main-header -->
+    </div> <!-- /.site-header -->
+    </div> <!-- /.site-main -->
+    <!--
+    carousel
+    -->
+
+    
+
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="banner-content">
+
+                        <h2></h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-container" class="container">
+        @if (TempData["Message"] != null)
+        {
+            <div id="message" class="alert alert-info">
+                @TempData["Message"]
+            </div>
+        }
+        <div class="row">
+            <div class="col-md-12">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>تصاویر مربوط به جلسات برگزار شده</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="owl-portfolio" class="owl-carousel owl-theme imageGallery1">
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" title=""><img src="img/first-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/second-portfolio-big.jpg" title=""><img src="img/second-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/third-portfolio-big.jpg" title=""><img src="img/third-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/fourth-portfolio-big.jpg" title=""><img src="img/fourth-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" data-lightbox="image-1"><img src="img/first-portfolio-item.jpg"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/second-portfolio-big.jpg" title=""><img src="img/second-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" title=""><img src="img/first-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/third-portfolio-big.jpg" title=""><img src="img/third-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/first-portfolio-big.jpg" data-lightbox="image-1"><img src="img/first-portfolio-item.jpg"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="portfolio-item">
+                            <a href="img/fourth-portfolio-big.jpg" title=""><img src="img/fourth-portfolio-item.jpg" alt="Gallery image 1" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>شرکت ملی پالایش و پخش فرآورده های نفتی ایران</h4>
+                    <h6>مدیریت فناوری اطلاعات و ارتباطات</h6>
+                    <div class="border-button"><a href="#portfolio">Discover More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    </body>
+</html>
+

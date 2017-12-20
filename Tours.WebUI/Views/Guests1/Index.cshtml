@@ -1,0 +1,98 @@
+﻿@model IEnumerable<SessionModel.Guest>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>لیست مهمانان جلسه <text>@TempData["MeetingName"]</text></h2>
+
+
+<form id="Save" name="save" method="post">
+    <table class="table table-hover table-bordered table-stripped">
+        <tr>
+            <th>
+               انتخاب
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Family)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NationalCode)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.MeetingId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.In_Out)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganId)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+         {
+            <tr>
+                <td>
+               <input type="checkbox" name="Guest" value=@item.Id />
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Family)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Post)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NationalCode)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.MeetingId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.In_Out)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrganId)
+                </td>
+
+                <td>
+                    
+                    <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger btn-xs">
+                        <span class="glyphicon glyphicon-remove" title="حذف"></span>
+                    </a>
+                    <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-primary btn-xs">
+                        <span class="glyphicon glyphicon-pencil" title="ویرایش"></span>
+                    </a>
+                    @*<a href="@Url.Action("EditGuest", new { id = TempData["meetingId"] })" class="btn btn-success btn-xs">
+                        <span class="glyphicon glyphicon-plus" title="افزودن مهمان جدید"></span>
+                    </a>*@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="@Url.Action("Create2", new {Id = TempData["meetingId"],Guest=item.Id })" class="btn btn-danger btn-xs">
+                        <span class="glyphicon glyphicon-plus-sign" title="افزودن به لیست"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</form>
+
+   
+
+<div>
+    <p>
+        <a href="@Url.Action("Create",new { MeetingId = TempData["meetingId"] })" class="btn btn-success btn-sm pull-left">افزودن مهمان</a>
+    </p>
+</div>

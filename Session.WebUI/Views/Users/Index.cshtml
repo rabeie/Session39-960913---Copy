@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SessionModel.User>
+
+@{
+    ViewBag.Title = "Index";
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>لیست</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-success btn-sm pull-left">رکورد جدید</a>
+</p>
+<table class="table table-hover table-bordered table-stripped">
+    <tr>
+        <th>
+            نام
+        </th>
+        <th>
+            نام خانوادگی
+        </th>
+        <th>
+           سمت
+        </th>
+        <th>
+           کد ملی
+        </th>
+        <th>
+           نام کاربری
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var employee in Model)
+{
+    <tr>
+        <td>@employee.Name</td>
+        <td>@employee.Family</td>
+        <td>@employee.Post</td>
+        <td>@employee.NationalCode</td>
+        <td>@employee.Username</td>
+        <td>
+            <a href="@Url.Action("Delete","Users", new { id = employee.PersonId, username = employee.Username })" class="btn btn-danger btn-xs">
+                <span class="glyphicon glyphicon-remove-circle" title="حذف"></span>
+            </a>
+            <a href="@Url.Action("Edit","Users", new { id = employee.PersonId, username = employee.Username })" class="btn btn-primary btn-xs">
+                <span class="glyphicon glyphicon-pencil" title="ویرایش"></span>
+            </a>
+        </td>
+    </tr>
+
+}
+
+</table>

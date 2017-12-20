@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-rtl.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap-theme-rtl.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="~/Content/animate.css">
+    <link rel="stylesheet" href="~/Content/templatemo_misc.css">
+    <link rel="stylesheet" href="~/Content/templatemo_style.css">
+    <link rel="stylesheet" href="~/Content/owl-carousel.css">
+
+    <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="banner-content login-page">
+                        <div class="login">
+                            <h3>Log In</h3>
+                            
+                                @RenderBody()
+                           
+                            <input type="submit" value="Log In" />
+                            <div class="utilities">
+                                <a href="#">Forgot Password?</a>
+                                <a href="#">Sign Up &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

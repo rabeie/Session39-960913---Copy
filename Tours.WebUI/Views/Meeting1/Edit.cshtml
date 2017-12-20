@@ -1,0 +1,58 @@
+﻿@model SessionModel.Meeting
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<form method="post" class="form-horizontal">
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Name">عنوان جلسه</label>
+        <div class="col-md-10">
+            <input type="text" name="Name" id="Name" value="@Model.TItle" placeholder="عنوان جلسه" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Family">تاریخ جلسه</label>
+        <div class="col-md-10">
+            <input type="text" name="Family" id="Family" value="@Model.Date" placeholder="تاریخ جلسه" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Post">ساعت شروع</label>
+        <div class="col-md-10">
+            <input type="text" name="Post" id="Post" value="@Model.StartTime" placeholder="ساعت شروع" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="NationalCode">ساعت پایان</label>
+        <div class="col-md-10">
+            <input type="text" name="NationalCode" id="NationalCode" value="@Model.EndTime" placeholder="ساعت پایان" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Username">مکان جلسه</label>
+        <div class="col-md-10">
+            <input type="text" name="Username" id="Username" placeholder="مکان جلسه" value="@Model.Place" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Username">شرح جلسه</label>
+        <div class="col-md-10">
+            <input type="text" name="Username" id="Username" placeholder="شرح جلسه" value="@Model.Explain" class="form-control" />
+        </div>
+    </div>
+    <input type="hidden" name="MeetingId" id="MeetingId" value="@Model.MeetingId" />
+    <div class="form-group">
+        <button class="btn btn-success btn-sm pull-left" type="submit">
+            <span class="glyphicon glyphicon-save"></span>
+            ذخیره
+        </button>
+    </div>
+</form>
